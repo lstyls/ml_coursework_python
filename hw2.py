@@ -36,9 +36,6 @@ class AdaBoost(AdaBooster):
         AdaBooster.__init__(self, attributes, clabels, DecStumpIG, T)
 
 
-def myLogitBoost(filename, T):
-    print "Not Implemented Successfully :("
-
 def myAdaBoost(filename, T):
     class AB(AdaBoost):
         def __init__(self, attributes, clabels):
@@ -55,7 +52,7 @@ def dstumpIG(filename):
     cv.perform_k_fold_cv(DecStumpIG, attributes, clabels, k=10, verbose=True)
     
     
-def dtree2GI(filename):
+def dtree2IG(filename):
     (attributes, clabels) = read_mush_csv(filename)
     print "TWO LAYER TREE ON FILE: " + filename + " --------------"
     cv.perform_k_fold_cv(DTTwoLayGini, attributes, clabels, k=10, verbose=True)
